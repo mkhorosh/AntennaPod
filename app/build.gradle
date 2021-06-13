@@ -29,7 +29,14 @@ android {
         vectorDrawables.useSupportLibrary true
         vectorDrawables.generatedDensities = []
 
-        testApplicationId "de.test.antennapod"
+        minSdkVersion 18
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testApplicationId "test.ui.automation"
+//        testApplicationId "de.test.antennapod"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         def commit = "Unknown commit"
@@ -211,6 +218,7 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$rulesVersion"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation 'androidx.test:core:1.2.0'
 }
 
 if (project.hasProperty("antennaPodPlayPublisherCredentials")) {
