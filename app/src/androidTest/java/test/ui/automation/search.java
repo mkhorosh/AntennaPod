@@ -56,13 +56,13 @@ public class search {
         mDevice = UiDevice.getInstance(getInstrumentation());
         UiObject editText = mDevice.findObject(new UiSelector().textStartsWith("Search"));
         editText.waitForExists(LAUNCH_TIMEOUT);
-        if (editText != null){
+        if (editText != null) {
             editText.setText("kuji podcast");
             mDevice.pressEnter();
             UiObject findText = mDevice.findObject(new UiSelector().textStartsWith("kuji podcast"));
             findText.waitForExists(LAUNCH_TIMEOUT);
             assertThat(findText, notNullValue());
-        }else{
+        } else {
             throw new UiObjectNotFoundException("search element not found :(");
         }
     }
@@ -73,41 +73,41 @@ public class search {
         mDevice = UiDevice.getInstance(getInstrumentation());
         UiObject moreButton = mDevice.findObject(new UiSelector().textStartsWith("more"));
         moreButton.waitForExists(LAUNCH_TIMEOUT);
-        if (moreButton == null){
+        if (moreButton == null) {
             throw new UiObjectNotFoundException("ui element not found :(");
         }
         moreButton.clickAndWaitForNewWindow(LAUNCH_TIMEOUT);
         UiObject changeCountry =
                 mDevice.findObject(new UiSelector().textStartsWith("Poland"));
         changeCountry.waitForExists(LAUNCH_TIMEOUT);
-        if (changeCountry == null){
+        if (changeCountry == null) {
             throw new UiObjectNotFoundException("ui element not found :(");
         }
         changeCountry.click();
 
         UiObject country = mDevice.findObject(new UiSelector().textStartsWith("Russia"));
         country.waitForExists(LAUNCH_TIMEOUT);
-        if (country == null){
+        if (country == null) {
             throw new UiObjectNotFoundException("country element not found :(");
         }
         country.click();
         UiObject checkCountry = mDevice.findObject(new UiSelector().textStartsWith("Russia"));
         checkCountry.waitForExists(LAUNCH_TIMEOUT);
-        assertThat(checkCountry,notNullValue());
+        assertThat(checkCountry, notNullValue());
         // after prepare
         checkCountry.click();
         changeCountry =
                 mDevice.findObject(new UiSelector().textStartsWith("Russia"));
         changeCountry.waitForExists(LAUNCH_TIMEOUT);
-        if (changeCountry == null){
+        if (changeCountry == null) {
             throw new UiObjectNotFoundException("ui element not found :(");
         }
-        for(int i=0;i<10;i++) {
+        for (int i = 0; i < 10; i++) {
             changeCountry.swipeDown(10);
         }
         changeCountry = mDevice.findObject(new UiSelector().textStartsWith("Poland"));
         changeCountry.waitForExists(LAUNCH_TIMEOUT);
-        if (changeCountry == null){
+        if (changeCountry == null) {
             throw new UiObjectNotFoundException("ui element not found :(");
         }
         changeCountry.click();
@@ -119,16 +119,16 @@ public class search {
         mDevice = UiDevice.getInstance(getInstrumentation());
         UiObject editText = mDevice.findObject(new UiSelector().textStartsWith("Search"));
         editText.waitForExists(LAUNCH_TIMEOUT);
-        if (editText != null){
+        if (editText != null) {
             editText.setText("the daily");
             mDevice.pressEnter();
             UiSelector podcast = new UiSelector();
             try {
                 podcast.textStartsWith("kuji podcast");
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 assertThat(podcast, null);
             }
-        }else{
+        } else {
             throw new UiObjectNotFoundException("search element not found :(");
         }
     }
@@ -139,16 +139,16 @@ public class search {
         mDevice = UiDevice.getInstance(getInstrumentation());
         UiObject editText = mDevice.findObject(new UiSelector().textStartsWith("Search"));
         editText.waitForExists(LAUNCH_TIMEOUT);
-        if (editText != null){
+        if (editText != null) {
             editText.setText("panda 333 shark");
             mDevice.pressEnter();
             UiSelector podcast = new UiSelector();
             try {
                 podcast.textStartsWith("panda 333 shark");
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 assertThat(podcast, null);
             }
-        }else{
+        } else {
             throw new UiObjectNotFoundException("search element not found :(");
         }
     }
