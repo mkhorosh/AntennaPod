@@ -71,6 +71,7 @@ public class search {
 //    32
     public void openCatalogOfCountry() throws UiObjectNotFoundException {
         mDevice = UiDevice.getInstance(getInstrumentation());
+//        prepare
         UiObject moreButton = mDevice.findObject(new UiSelector().textStartsWith("more"));
         moreButton.waitForExists(LAUNCH_TIMEOUT);
         if (moreButton == null) {
