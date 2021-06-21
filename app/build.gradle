@@ -33,10 +33,10 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        testApplicationId "test.ui.automation"
 //        testApplicationId "de.test.antennapod"
 
+
+        testApplicationId "test.ui.automation"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         def commit = "Unknown commit"
